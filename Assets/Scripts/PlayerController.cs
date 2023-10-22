@@ -53,6 +53,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision collision){
+//        Debug.Log($"collision.gameObject: {collision.gameObject}");
+        if (collision.gameObject.CompareTag("Enemy")){
+            // Destroy the current game object / player
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            // Update the winText to display "You Lose!"
+            winTextObject.gameObject.SetActive(true);
+            winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lost!";
+            
+        }
+    }
+
     void SetCountText(){
         countText.text = "Count: " + count.ToString();
         if (count >= numCollectibles){

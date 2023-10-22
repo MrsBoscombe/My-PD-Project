@@ -56,6 +56,33 @@ public class GenericPlayerController : MonoBehaviour
     
     void OnAnimatorMove ()
     {
-        m_Rigidbody.MovePosition (m_Rigidbody.position + transform.forward * m_Animator.deltaPosition.magnitude);
+        /*Vector3 targetPosition = m_Rigidbody.position + transform.forward * m_Animator.deltaPosition.magnitude;
+        Vector3 direction = targetPosition - m_Rigidbody.position;
+
+        CapsuleCollider capsuleCollider = GetComponent<CapsuleCollider>();
+        Vector3 startPoint = transform.TransformPoint(capsuleCollider.center + Vector3.up * -capsuleCollider.height * 0.5f);
+        Vector3 endPoint = transform.TransformPoint(capsuleCollider.center + Vector3.up * capsuleCollider.height * 0.5f);
+
+        bool hasCollision = Physics.CheckCapsule(startPoint, endPoint, capsuleCollider.radius, ~0);
+
+        if (!hasCollision)
+        {
+            m_Rigidbody.MovePosition(targetPosition);
+        }*/
+
+        Vector3 targetPosition = m_Rigidbody.position + transform.forward * m_Animator.deltaPosition.magnitude;
+        Vector3 direction = targetPosition - m_Rigidbody.position;
+        float distance = m_Animator.deltaPosition.magnitude;
+        RaycastHit hit;
+
+        bool hasCollision = Physics.Raycast(m_Rigidbody.position, direction, out hit, distance);
+
+        if (!hasCollision)
+        {
+            m_Rigidbody.MovePosition(targetPosition);
+        }
+
+        // This was the only line in the method before I started messing with it!
+        //m_Rigidbody.MovePosition (m_Rigidbody.position + transform.forward * m_Animator.deltaPosition.magnitude);
     }
 }
