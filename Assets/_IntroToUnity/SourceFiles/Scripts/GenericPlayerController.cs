@@ -22,6 +22,8 @@ public class GenericPlayerController : MonoBehaviour
     [SerializeField] AudioSource interactAudio;
     [SerializeField] AudioClip[] happyClips;
     [SerializeField] AudioClip interactClip;
+    [SerializeField] AudioSource footstepSource;
+    [SerializeField] AudioClip[] foliageClips;
   
     
     void Awake()
@@ -111,7 +113,7 @@ public class GenericPlayerController : MonoBehaviour
 
     void PlayHappy(){
         PauseWalkingSound();
-        int selectedClip = UnityEngine.Random.Range(0, 1);
+        int selectedClip = UnityEngine.Random.Range(0, happyClips.Length);
         walkingAudio.PlayOneShot(happyClips[selectedClip]);
     }
 
@@ -119,6 +121,11 @@ public class GenericPlayerController : MonoBehaviour
         PauseWalkingSound();
         interactAudio.PlayOneShot(interactClip);
         
+    }
+
+    public void PlayStep(){
+        int selectedClip = UnityEngine.Random.Range(0, foliageClips.Length);
+        footstepSource.PlayOneShot(foliageClips[selectedClip]);
     }
 
 }
