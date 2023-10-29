@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    [SerializeField] private PlayerController player;
     private NavMeshAgent navMeshAgent;
 
     // Start is called before the first frame update
@@ -18,7 +18,9 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         if (player != null){
-            navMeshAgent.SetDestination(player.position);
+            if (!player.isGameOver){
+                navMeshAgent.SetDestination(player.gameObject.transform.position);
+            }
         }   
     }
 }

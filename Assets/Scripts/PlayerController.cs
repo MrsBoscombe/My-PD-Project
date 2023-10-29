@@ -16,9 +16,12 @@ public class PlayerController : MonoBehaviour
     private Vector3 movementVector3;
     public float speed = 0;
     private int numCollectibles;
+    public bool isGameOver = false;
 
     [SerializeField] private TextMeshProUGUI countText;
     [SerializeField] private GameObject winTextObject;
+
+    private SoundManager soundManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,7 @@ public class PlayerController : MonoBehaviour
         count = 0;
         numCollectibles = 12;       // change if the number of collectibles changes!
         SetCountText();
+        soundManager = GetComponent<SoundManager>();
     }
 
     void OnMove(InputValue movementValue){
@@ -50,26 +54,35 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             count++;
             SetCountText();
+            soundManager.PlayPickup();
         }
     }
 
     void OnCollisionEnter(Collision collision){
 //        Debug.Log($"collision.gameObject: {collision.gameObject}");
-        if (collision.gameObject.CompareTag("Enemy")){
+
+        if (!isGameOver && collision.gameObject.CompareTag("Enemy")){
+            soundManager.PlayLose();
             // Destroy the current game object / player
             Destroy(collision.gameObject);
             Destroy(gameObject);
             // Update the winText to display "You Lose!"
             winTextObject.gameObject.SetActive(true);
             winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lost!";
-            
+            isGameOver = true;
+        }
+
+        if (collision.gameObject.CompareTag("Wall")){
+            soundManager.PlayBounce();
         }
     }
 
     void SetCountText(){
         countText.text = "Count: " + count.ToString();
         if (count >= numCollectibles){
-            winTextObject.SetActive(true);
+            soundManager.PlayWin();
+            isGameOver = true;
+            winTextObject.SetActive(true); 
         }
     }
     

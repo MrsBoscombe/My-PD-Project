@@ -11,6 +11,7 @@ TagManager:
   - Food
   - Happy
   - Foliage
+  - Wall
   layers:
   - Default
   - TransparentFX
