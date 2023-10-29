@@ -82,13 +82,7 @@ public class GenericPlayerController : MonoBehaviour
         {
             m_Rigidbody.MovePosition(targetPosition);
         }
-        /*else{
-            if (walkingAudio.isPlaying)
-            {
-                walkingAudio.Pause();
-            }
-        }*/
-
+  
         // This was the only line in the method before I started messing with it!
         //m_Rigidbody.MovePosition (m_Rigidbody.position + transform.forward * m_Animator.deltaPosition.magnitude);
     }
@@ -98,6 +92,9 @@ public class GenericPlayerController : MonoBehaviour
         if (collider.gameObject.CompareTag("Food")) {
             PlayInteract();
             Destroy(collider.gameObject);
+        }
+        else if (collider.gameObject.CompareTag("Happy")){
+            PlayHappy();
         }
     }
 

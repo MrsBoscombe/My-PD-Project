@@ -9,6 +9,7 @@ TagManager:
   - CinemachineTarget
   - CornStalk
   - Food
+  - Happy
   layers:
   - Default
   - TransparentFX
