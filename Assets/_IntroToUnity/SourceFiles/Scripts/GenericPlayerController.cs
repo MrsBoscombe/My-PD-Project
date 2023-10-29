@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,6 @@ public class GenericPlayerController : MonoBehaviour
     public float MaxSpeed = 6.0f;
     
     private Animator m_Animator;
-    
     Rigidbody m_Rigidbody;
 
     float m_Horizontal;
@@ -17,6 +17,12 @@ public class GenericPlayerController : MonoBehaviour
 
     private int m_SpeedRatioHash;
     private bool m_HasSpeedRatio;
+
+    [SerializeField] AudioSource walkingAudio; 
+    [SerializeField] AudioSource interactAudio;
+    [SerializeField] AudioClip[] happyClips;
+    [SerializeField] AudioClip interactClip;
+  
     
     void Awake()
     {
@@ -37,8 +43,17 @@ public class GenericPlayerController : MonoBehaviour
         float speed = MaxSpeed * m_Vertical;
 
         bool isWalking =  m_Vertical > 0.1f;
+
         m_Animator.SetBool ("IsWalking", isWalking);
         m_Animator.SetFloat("Speed", m_Vertical * speed);
+
+        if (isWalking && !interactAudio.isPlaying){
+            PlayWalkingSound();
+        }
+
+        if (!isWalking){
+            PauseWalkingSound();
+        }
 
         Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, m_Horizontal * TurnSpeed * Time.deltaTime, 0));
         m_Rigidbody.MoveRotation(transform.rotation * deltaRotation);
@@ -56,20 +71,6 @@ public class GenericPlayerController : MonoBehaviour
     
     void OnAnimatorMove ()
     {
-        /*Vector3 targetPosition = m_Rigidbody.position + transform.forward * m_Animator.deltaPosition.magnitude;
-        Vector3 direction = targetPosition - m_Rigidbody.position;
-
-        CapsuleCollider capsuleCollider = GetComponent<CapsuleCollider>();
-        Vector3 startPoint = transform.TransformPoint(capsuleCollider.center + Vector3.up * -capsuleCollider.height * 0.5f);
-        Vector3 endPoint = transform.TransformPoint(capsuleCollider.center + Vector3.up * capsuleCollider.height * 0.5f);
-
-        bool hasCollision = Physics.CheckCapsule(startPoint, endPoint, capsuleCollider.radius, ~0);
-
-        if (!hasCollision)
-        {
-            m_Rigidbody.MovePosition(targetPosition);
-        }*/
-
         Vector3 targetPosition = m_Rigidbody.position + transform.forward * m_Animator.deltaPosition.magnitude;
         Vector3 direction = targetPosition - m_Rigidbody.position;
         float distance = m_Animator.deltaPosition.magnitude;
@@ -81,8 +82,46 @@ public class GenericPlayerController : MonoBehaviour
         {
             m_Rigidbody.MovePosition(targetPosition);
         }
+        /*else{
+            if (walkingAudio.isPlaying)
+            {
+                walkingAudio.Pause();
+            }
+        }*/
 
         // This was the only line in the method before I started messing with it!
         //m_Rigidbody.MovePosition (m_Rigidbody.position + transform.forward * m_Animator.deltaPosition.magnitude);
     }
+
+    void OnTriggerEnter(Collider collider){
+        Debug.Log(collider);
+        if (collider.gameObject.CompareTag("Food")) {
+            PlayInteract();
+            Destroy(collider.gameObject);
+        }
+    }
+
+
+    void PauseWalkingSound(){
+        if (walkingAudio.isPlaying)
+            walkingAudio.Pause();
+    }
+
+    void PlayWalkingSound(){
+        if (!walkingAudio.isPlaying)
+            walkingAudio.Play();
+    }
+
+    void PlayHappy(){
+        PauseWalkingSound();
+        int selectedClip = UnityEngine.Random.Range(0, 1);
+        walkingAudio.PlayOneShot(happyClips[selectedClip]);
+    }
+
+    void PlayInteract(){
+        PauseWalkingSound();
+        interactAudio.PlayOneShot(interactClip);
+        
+    }
+
 }
