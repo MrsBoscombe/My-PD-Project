@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if (other.gameObject.CompareTag("Pickup")){
             other.gameObject.GetComponent<PlayParticleEffect>().Play();
-            //other.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
             count++;
             SetCountText();
             soundManager.PlayPickup();
