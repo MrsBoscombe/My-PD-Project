@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 0;
     private int numCollectibles;
     public bool isGameOver = false;
+    [SerializeField] private ParticleSystem explosionFX;
 
     [SerializeField] private TextMeshProUGUI countText;
     [SerializeField] private GameObject winTextObject;
@@ -64,9 +65,15 @@ public class PlayerController : MonoBehaviour
 
         if (!isGameOver && collision.gameObject.CompareTag("Enemy")){
             soundManager.PlayLose();
+            // Generate a Visual Particle Effect
+            
+            explosionFX = Instantiate(explosionFX, transform.position, Quaternion.identity);
+            explosionFX.Play();
+
             // Destroy the current game object / player
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            Destroy(explosionFX, 1);
             // Update the winText to display "You Lose!"
             winTextObject.gameObject.SetActive(true);
             winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lost!";

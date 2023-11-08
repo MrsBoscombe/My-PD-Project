@@ -25,6 +25,7 @@ public class GenericPlayerController : MonoBehaviour
     [SerializeField] AudioSource footstepSource;
     [SerializeField] AudioClip[] foliageClips;
   
+    [SerializeField] ParticleSystem foliage;
     
     void Awake()
     {
