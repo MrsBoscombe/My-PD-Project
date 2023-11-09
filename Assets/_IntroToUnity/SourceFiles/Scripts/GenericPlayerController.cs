@@ -127,6 +127,12 @@ public class GenericPlayerController : MonoBehaviour
     public void PlayStep(){
         int selectedClip = UnityEngine.Random.Range(0, foliageClips.Length);
         footstepSource.PlayOneShot(foliageClips[selectedClip]);
+        PlayParticleEffect();
     }
 
+    public void PlayParticleEffect(){
+        ParticleSystem leaf = Instantiate(foliage, transform.position, Quaternion.identity);
+        leaf.Play();
+        //Destroy(leaf, 2);
+    }
 }

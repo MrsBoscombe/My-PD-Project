@@ -6,8 +6,8 @@ public class PlayParticleEffect : MonoBehaviour
 {
     [SerializeField] ParticleSystem particleEffect;
 
-    public void PlayEffect(){
-        particleEffect = Instantiate(particleEffect, transform.position, 3);
+    public void Play(){
+        particleEffect = Instantiate(particleEffect, transform.position, Quaternion.identity);
         particleEffect.Play();
     }
 }
