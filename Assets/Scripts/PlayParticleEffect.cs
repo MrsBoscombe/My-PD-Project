@@ -9,7 +9,5 @@ public class PlayParticleEffect : MonoBehaviour
     public void Play(){
         particleEffect = Instantiate(particleEffect, transform.position, Quaternion.identity);
         particleEffect.Play();
-        //Destroy(particleEffect, 3);
-        Debug.Log("ParticleEffect Instantiated and Played");
     }
 }
