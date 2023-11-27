@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.UI;
 
 
 public class PlayerController : MonoBehaviour
@@ -14,15 +15,20 @@ public class PlayerController : MonoBehaviour
     private float movementY;
     // Why not just create a Vector3 here?
     private Vector3 movementVector3;
-    public float speed = 0;
+    public float speed = 3.5f;
     private int numCollectibles;
     public bool isGameOver = false;
     [SerializeField] private ParticleSystem explosionFX;
+    [SerializeField] private Slider slider;
 
     [SerializeField] private TextMeshProUGUI countText;
     [SerializeField] private GameObject winTextObject;
 
     private SoundManager soundManager;
+
+    private void OnAwake(){
+        slider.value = GetComponent<AudioSource>().volume;
+    }
     // Start is called before the first frame update
     void Start()
     {
