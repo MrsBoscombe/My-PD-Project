@@ -99,6 +99,7 @@ public class GenericPlayerController : MonoBehaviour
         else if (collider.gameObject.CompareTag("Happy")){
             PlayHappy();
         }
+
     }
 
 
