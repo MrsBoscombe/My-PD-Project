@@ -31,4 +31,8 @@ public class DBController : MonoBehaviour
         }
 
     }
+
+    void EndGame(){
+        anim.SetTrigger("Yawn");
+    }
 }
