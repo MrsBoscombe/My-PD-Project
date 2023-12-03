@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject winTextObject;
 
     private SoundManager soundManager;
+    private Animator anim;
 
     private void OnAwake(){
         slider.value = GetComponent<AudioSource>().volume;
@@ -70,6 +71,8 @@ public class PlayerController : MonoBehaviour
 //        Debug.Log($"collision.gameObject: {collision.gameObject}");
 
         if (!isGameOver && collision.gameObject.CompareTag("Enemy")){
+            //anim = collision.gameObject.GetComponentInChildren<Animator>();
+            StartCoroutine(GameOver(collision));
             soundManager.PlayLose();
             // Generate a Visual Particle Effect
             
@@ -77,8 +80,8 @@ public class PlayerController : MonoBehaviour
             explosionFX.Play();
 
             // Destroy the current game object / player
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            //Destroy(collision.gameObject);
+            //Destroy(gameObject);
             Destroy(explosionFX, 1);
             // Update the winText to display "You Lose!"
             winTextObject.gameObject.SetActive(true);
@@ -90,6 +93,17 @@ public class PlayerController : MonoBehaviour
             soundManager.PlayBounce();
         }
     }
+   
+    IEnumerator GameOver(Collision collision){
+        Animator anim = collision.gameObject.GetComponentInChildren<Animator>();
+        anim.SetFloat("speed_f", 0f);
+        anim.SetTrigger("Magic");
+        // want to wait until the Magic animation plays...
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
+        //yield return new WaitForSeconds(1f);
+        Destroy(collision.gameObject);
+    }
 
     void SetCountText(){
         countText.text = "Count: " + count.ToString();
@@ -99,5 +113,4 @@ public class PlayerController : MonoBehaviour
             winTextObject.SetActive(true); 
         }
     }
-    
 }

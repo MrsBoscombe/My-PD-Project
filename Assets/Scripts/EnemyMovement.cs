@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private PlayerController player;
     [SerializeField] Slider slider;
     private NavMeshAgent navMeshAgent;
+    private Animator anim;
 
     private void OnAwake(){
         slider.value = navMeshAgent.speed;
@@ -17,7 +18,10 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-  
+        anim = GetComponentInChildren<Animator>();
+        if (anim){
+            anim.SetFloat("speed_f", navMeshAgent.speed);
+        }
     }
 
     // Update is called once per frame
