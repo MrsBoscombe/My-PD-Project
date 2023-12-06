@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
             //anim = collision.gameObject.GetComponentInChildren<Animator>();
             StartCoroutine(GameOver(collision));
             soundManager.PlayLose();
+            rb.velocity = Vector3.zero;
             // Generate a Visual Particle Effect
             
             explosionFX = Instantiate(explosionFX, transform.position, Quaternion.identity);
@@ -97,11 +98,18 @@ public class PlayerController : MonoBehaviour
     IEnumerator GameOver(Collision collision){
         Animator anim = collision.gameObject.GetComponentInChildren<Animator>();
         anim.SetFloat("speed_f", 0f);
+        collision.gameObject.transform.LookAt(gameObject.transform);
         anim.SetTrigger("Magic");
+ 
         // want to wait until the Magic animation plays...
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
+        // Generate a Visual Particle Effect
+            
+        //explosionFX = Instantiate(explosionFX, transform.position, Quaternion.identity);
+        //explosionFX.Play();
         //yield return new WaitForSeconds(1f);
+        //Destroy(explosionFX, 1);
         Destroy(collision.gameObject);
     }
 
