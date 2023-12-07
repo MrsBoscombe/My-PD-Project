@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f358986c7c6a4f04c959ca46ebd57a51,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -131,6 +132,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1647678021}
     m_Modifications:
+    - target: {fileID: 862785067194587790, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910207293444730637, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3997150231481826834, guid: f21e93770ea0db8498017a64446980c5,
         type: 3}
       propertyPath: m_RootOrder
@@ -190,6 +201,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pickup Plus (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417056363767510078, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410103176971618394, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1123,6 +1144,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1647678021}
     m_Modifications:
+    - target: {fileID: 862785067194587790, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910207293444730637, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3997150231481826834, guid: f21e93770ea0db8498017a64446980c5,
         type: 3}
       propertyPath: m_RootOrder
@@ -1183,6 +1214,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickup Plus (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4417056363767510078, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410103176971618394, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1239,6 +1280,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1647678021}
     m_Modifications:
+    - target: {fileID: 862785067194587790, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910207293444730637, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3997150231481826834, guid: f21e93770ea0db8498017a64446980c5,
         type: 3}
       propertyPath: m_RootOrder
@@ -1299,6 +1350,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickup Plus (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4417056363767510078, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410103176971618394, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1312,6 +1373,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1647678021}
     m_Modifications:
+    - target: {fileID: 862785067194587790, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910207293444730637, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3997150231481826834, guid: f21e93770ea0db8498017a64446980c5,
         type: 3}
       propertyPath: m_RootOrder
@@ -1371,6 +1442,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pickup Plus (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417056363767510078, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410103176971618394, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1601,6 +1682,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1647678021}
     m_Modifications:
+    - target: {fileID: 862785067194587790, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910207293444730637, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3997150231481826834, guid: f21e93770ea0db8498017a64446980c5,
         type: 3}
       propertyPath: m_RootOrder
@@ -1661,6 +1752,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickup Plus (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4417056363767510078, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410103176971618394, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1674,6 +1775,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1647678021}
     m_Modifications:
+    - target: {fileID: 862785067194587790, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910207293444730637, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3997150231481826834, guid: f21e93770ea0db8498017a64446980c5,
         type: 3}
       propertyPath: m_RootOrder
@@ -1733,6 +1844,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pickup Plus (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417056363767510078, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410103176971618394, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1956,6 +2077,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1647678021}
     m_Modifications:
+    - target: {fileID: 862785067194587790, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910207293444730637, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3997150231481826834, guid: f21e93770ea0db8498017a64446980c5,
         type: 3}
       propertyPath: m_RootOrder
@@ -2016,6 +2147,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickup Plus (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 4417056363767510078, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410103176971618394, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2035,6 +2176,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1647678021}
     m_Modifications:
+    - target: {fileID: 862785067194587790, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910207293444730637, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3997150231481826834, guid: f21e93770ea0db8498017a64446980c5,
         type: 3}
       propertyPath: m_RootOrder
@@ -2094,6 +2245,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pickup Plus (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417056363767510078, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410103176971618394, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3201,6 +3362,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1647678021}
     m_Modifications:
+    - target: {fileID: 862785067194587790, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910207293444730637, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3997150231481826834, guid: f21e93770ea0db8498017a64446980c5,
         type: 3}
       propertyPath: m_RootOrder
@@ -3260,6 +3431,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pickup Plus (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417056363767510078, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410103176971618394, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5014,6 +5195,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1647678021}
     m_Modifications:
+    - target: {fileID: 862785067194587790, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910207293444730637, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3997150231481826834, guid: f21e93770ea0db8498017a64446980c5,
         type: 3}
       propertyPath: m_RootOrder
@@ -5073,6 +5264,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pickup Plus (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417056363767510078, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410103176971618394, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6344,6 +6545,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1647678021}
     m_Modifications:
+    - target: {fileID: 862785067194587790, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910207293444730637, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3997150231481826834, guid: f21e93770ea0db8498017a64446980c5,
         type: 3}
       propertyPath: m_RootOrder
@@ -6403,6 +6614,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pickup Plus (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417056363767510078, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410103176971618394, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6547,7 +6768,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -7584,6 +7805,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1647678021}
     m_Modifications:
+    - target: {fileID: 862785067194587790, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910207293444730637, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3997150231481826834, guid: f21e93770ea0db8498017a64446980c5,
         type: 3}
       propertyPath: m_RootOrder
@@ -7643,6 +7874,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pickup Plus
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417056363767510078, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410103176971618394, guid: f21e93770ea0db8498017a64446980c5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
