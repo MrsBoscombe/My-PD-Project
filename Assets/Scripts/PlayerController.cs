@@ -65,8 +65,12 @@ public class PlayerController : MonoBehaviour
 
             // check to see if raycast hits an object
             if (Physics.Raycast(ray, out hit)){
-                targetPos = hit.point;      // Set target position
-                isMoving = true;            // Start player movement
+
+                // Make sure the raycast hit the ground
+                if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground")){
+                    targetPos = hit.point;      // Set target position
+                    isMoving = true;            // Start player movement
+                }
             }
             else{
                 isMoving = false;          // stop player movement
