@@ -50,6 +50,15 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    // Added to support following the mouse
+    private void Update(){
+        if (Input.GetMouseButton(0)){        // check if left mouse button is held down
+        
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Debug.DrawRay(ray.origin, ray.direction*50, Color.yellow);
+        }
+    }
+
     private void FixedUpdate(){
         //Vector3 movementVector
         rb.AddForce(movementVector3 * speed);    
@@ -72,7 +81,11 @@ public class PlayerController : MonoBehaviour
 
         if (!isGameOver && collision.gameObject.CompareTag("Enemy")){
             //anim = collision.gameObject.GetComponentInChildren<Animator>();
-            StartCoroutine(GameOver(collision));
+            Animator anim = collision.gameObject.GetComponentInChildren<Animator>();
+            anim.SetFloat("speed_f", 0f);
+            collision.gameObject.transform.LookAt(gameObject.transform);
+            anim.SetTrigger("Magic");
+ 
             soundManager.PlayLose();
             rb.velocity = Vector3.zero;
             // Generate a Visual Particle Effect
@@ -80,10 +93,8 @@ public class PlayerController : MonoBehaviour
             explosionFX = Instantiate(explosionFX, transform.position, Quaternion.identity);
             explosionFX.Play();
 
-            // Destroy the current game object / player
-            //Destroy(collision.gameObject);
-            //Destroy(gameObject);
-            Destroy(explosionFX, 1);
+            GameOver();
+
             // Update the winText to display "You Lose!"
             winTextObject.gameObject.SetActive(true);
             winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lost!";
@@ -94,30 +105,21 @@ public class PlayerController : MonoBehaviour
             soundManager.PlayBounce();
         }
     }
-   
-    IEnumerator GameOver(Collision collision){
-        Animator anim = collision.gameObject.GetComponentInChildren<Animator>();
-        anim.SetFloat("speed_f", 0f);
-        collision.gameObject.transform.LookAt(gameObject.transform);
-        anim.SetTrigger("Magic");
- 
-        // want to wait until the Magic animation plays...
-        yield return new WaitForSeconds(1.5f);
-        Destroy(gameObject);
-        // Generate a Visual Particle Effect
-            
-        //explosionFX = Instantiate(explosionFX, transform.position, Quaternion.identity);
-        //explosionFX.Play();
-        //yield return new WaitForSeconds(1f);
-        //Destroy(explosionFX, 1);
-        Destroy(collision.gameObject);
-    }
 
+    void GameOver(){
+        // Attempting to wait until animation plays to delete player / enemy
+        GameObject enemy = GameObject.FindWithTag("Enemy");
+        Destroy(enemy, 1.5f);
+        Destroy(gameObject, 1.5f);
+        Destroy(explosionFX, 1);
+    }
+  
     void SetCountText(){
         countText.text = "Count: " + count.ToString();
         if (count >= numCollectibles){
             soundManager.PlayWin();
             isGameOver = true;
+            GameOver();
             winTextObject.SetActive(true); 
         }
     }
