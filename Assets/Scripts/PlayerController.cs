@@ -27,6 +27,10 @@ public class PlayerController : MonoBehaviour
     private SoundManager soundManager;
     private Animator anim;
 
+    private Vector3 targetPos;
+    [SerializeField] private bool isMoving = false;
+    [SerializeField] private bool followTheMouse = true;
+
     private void OnAwake(){
         slider.value = GetComponent<AudioSource>().volume;
     }
@@ -56,12 +60,35 @@ public class PlayerController : MonoBehaviour
         
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Debug.DrawRay(ray.origin, ray.direction*50, Color.yellow);
+
+            RaycastHit hit;  // define variable to hold raycast hit information
+
+            // check to see if raycast hits an object
+            if (Physics.Raycast(ray, out hit)){
+                targetPos = hit.point;      // Set target position
+                isMoving = true;            // Start player movement
+            }
+            else{
+                isMoving = false;          // stop player movement
+            } 
         }
     }
 
     private void FixedUpdate(){
-        //Vector3 movementVector
-        rb.AddForce(movementVector3 * speed);    
+        if (followTheMouse){
+            if (isMoving){
+                // Move the player toward the target position
+                Vector3 direction = targetPos - rb.position;
+                direction.Normalize();
+                rb.AddForce(direction * speed);
+            }
+
+        }
+        else{
+            // movement with arrow/ad keys
+        
+            rb.AddForce(movementVector3 * speed);    
+        }
 
 
     }

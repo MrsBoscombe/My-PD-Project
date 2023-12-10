@@ -5764,6 +5764,8 @@ MonoBehaviour:
   slider: {fileID: 0}
   countText: {fileID: 212077796}
   winTextObject: {fileID: 219657006}
+  isMoving: 0
+  followTheMouse: 1
 --- !u!114 &1465785363
 MonoBehaviour:
   m_ObjectHideFlags: 0
