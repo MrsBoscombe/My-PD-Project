@@ -25,7 +25,7 @@ public class GenericPlayerController : MonoBehaviour
     [SerializeField] AudioSource footstepSource;
     [SerializeField] AudioClip[] foliageClips;
   
-    [SerializeField] ParticleSystem foliage;
+    [SerializeField] GameObject foliage;
     
     void Awake()
     {
@@ -132,8 +132,10 @@ public class GenericPlayerController : MonoBehaviour
     }
 
     public void PlayFoliageEffect(){
+        foliage.GetComponent<Animator>().Play("LeafyTrail");
         //ParticleSystem leaf = Instantiate(foliage, transform.position, Quaternion.identity);
-        foliage.Play();
+        //leaf.Play();
         //Destroy(leaf, 2);
+        Debug.Log("PlayFoliageEffect Played");
     }
 }
